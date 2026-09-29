@@ -1,0 +1,238 @@
+/* ==========================================
+   1. INHERITANCE & BASE STYLES
+   ========================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Inherited by child elements */
+    color: #333333; /* Named / Hex color / Inherited */
+    background-color: #fafafa; /* RGB/Hex background */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   2. SELECTORS DEMONSTRATION
+   ========================================== */
+
+/* Element Selector */
+footer {
+    background-color: #222222;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* ID Selector */
+#main-header {
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Class Selector */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e67e22;
+}
+
+/* Grouping Selector */
+h1, h2, h3 {
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Descendant Selector */
+.nav-links a {
+    text-decoration: none;
+    color: #555555;
+    font-weight: 600;
+    margin-left: 20px;
+    display: inline-block; /* Display Property requirement */
+    transition: color 0.3s ease;
+}
+
+/* Attribute Selector */
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+/* ==========================================
+   3. PSEUDO-CLASSES & PSEUDO-ELEMENTS
+   ========================================== */
+
+/* :hover Pseudo-class */
+.nav-links a:hover {
+    color: #e67e22;
+}
+
+.order-btn:hover {
+    background-color: #d35400 !important;
+    transform: translateY(-2px);
+}
+
+/* :first-child Pseudo-class */
+.food-card:first-child {
+    border: 2px dashed #e67e22;
+    background-color: #fffaf5;
+}
+
+/* ::before & ::after Pseudo-elements Requirement */
+.section-title::before {
+    content: "★ ";
+    color: #e67e22;
+}
+
+.section-title::after {
+    content: " ★";
+    color: #e67e22;
+}
+
+/* ==========================================
+   4. LAYOUT, BOX MODEL, CONSTRAINTS & CARDS
+   ========================================== */
+.welcome-section {
+    /* Background Image Properties Requirement */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/pizza.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+}
+
+.menu-section, .about-section, .contact-section, .lab-demo-section {
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.food-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Box Model Requirement (Content, Padding, Border, Margin) */
+.food-card {
+    background-color: #ffffff;
+    width: 240px;
+    min-height: 380px; /* Min/Max constraints requirement */
+    max-height: 420px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box; /* Box-sizing requirement */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+}
+
+.food-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.price {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #27ae60;
+    margin: 10px 0;
+}
+
+.btn {
+    background-color: #e67e22;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* ==========================================
+   5. LAB DEMONSTRATIONS (Overflow, Margin Collapsing)
+   ========================================== */
+.lab-demo-section {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.overflow-box {
+    width: 300px;
+    height: 80px;
+    border: 2px solid #333;
+    padding: 10px;
+    overflow: scroll; /* Demonstrates scroll overflow requirement */
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+/* Margin Collapsing Demonstration */
+.margin-box-1 {
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    margin-bottom: 40px; /* Bottom margin */
+    width: 250px;
+}
+
+.margin-box-2 {
+    background-color: #e74c3c;
+    color: white;
+    padding: 15px;
+    margin-top: 30px; /* Top margin - collapses with Box 1's bottom margin */
+    width: 250px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* ==========================================
+   6. CASCADE & SPECIFICITY CONFLICT DEMO
+   ========================================== */
+/* Rule A (Lower specificity) */
+p {
+    font-size: 16px;
+}
+
+/* Rule B (Higher specificity via ID combination) overrides Rule A */
+#home p {
+    font-size: 18px; 
+}
